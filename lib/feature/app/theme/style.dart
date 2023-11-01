@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 const backgroundColor = Color.fromRGBO(19, 28, 33, 1);
@@ -16,3 +14,4 @@ const chatBarMessageColor = Color.fromRGBO(30, 36, 40, 1);
 const nobleChatBoxColor = Color.fromRGBO(31, 44, 52, 1);
 const greyColor = Colors.grey;
 const blackColor = Colors.black;
+const whiteColor = Colors.white;
