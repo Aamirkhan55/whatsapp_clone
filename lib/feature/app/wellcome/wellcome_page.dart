@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/feature/app/theme/style.dart';
+import 'package:whatsapp_clone/feature/presentation/pages/login_page.dart';
 
 class WellcomePage extends StatelessWidget {
   const WellcomePage({super.key});
@@ -24,10 +25,18 @@ class WellcomePage extends StatelessWidget {
             Image.asset("assets/bg_image.png"),
              Column(
               children: [
-                const Text("Read Our Privacy Polices Tap, 'Agree and Continue' to accept the Term and Condition"),
+                const Text(
+                  "Read Our Privacy Polices Tap 'Agree and Continue' to accept the Term and Condition",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                  ),
                 const SizedBox(height: 30),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                  },
                   child: Container(
                     width: 200,
                     height: 40,
@@ -40,7 +49,7 @@ class WellcomePage extends StatelessWidget {
                         'AGREE AND CONTINUE',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 22,
+                          fontSize: 15,
                         ),
                         ),
                     ),

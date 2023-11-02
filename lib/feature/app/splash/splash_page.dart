@@ -12,17 +12,23 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-
   @override
   void initState() {
-    Timer(const Duration(seconds: 5), () { 
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const WellcomePage() ));
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (_) => const WellcomePage(),
+        ),
+        (route) => false,
+      );
     });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: backgroundColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,7 +39,7 @@ class _SplashPageState extends State<SplashPage> {
             color: Colors.white,
             width: 100,
             height: 100,
-            ),
+          ),
           Column(
             children: [
               const Text(
@@ -43,9 +49,9 @@ class _SplashPageState extends State<SplashPage> {
                   fontWeight: FontWeight.w400,
                   color: Colors.green,
                 ),
-                ),
+              ),
               const SizedBox(height: 10),
-               Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
@@ -53,20 +59,20 @@ class _SplashPageState extends State<SplashPage> {
                     color: Colors.white,
                     width: 35,
                     height: 35,
-                    ),
-                const SizedBox(width: 5),
-                const Text(
-                  'Meta',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
                   ),
+                  const SizedBox(width: 5),
+                  const Text(
+                    'Meta',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ],
-               ), 
-              const SizedBox(height: 10), 
+              ),
+              const SizedBox(height: 10),
             ],
-          )  
+          )
         ],
       ),
     );
