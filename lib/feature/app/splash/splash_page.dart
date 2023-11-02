@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/feature/app/theme/style.dart';
-import 'package:whatsapp_clone/feature/presentation/pages/wellcome_page.dart';
+import 'package:whatsapp_clone/feature/app/wellcome/wellcome_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -62,9 +62,9 @@ class _SplashPageState extends State<SplashPage> {
                     fontWeight: FontWeight.w500,
                   ),
                   ),
-
                 ],
                ), 
+              const SizedBox(height: 10), 
             ],
           )  
         ],
