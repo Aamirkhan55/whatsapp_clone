@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
 
   static Country _selectedFilteredDialogCountry =
       CountryPickerUtils.getCountryByPhoneCode("92");
-  String _countryCode = _selectedFilteredDialogCountry.phoneCode;
+  String countryCode = _selectedFilteredDialogCountry.phoneCode;
 
   @override
   void dispose() {
@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
               onValuePicked: (Country country) {
                 setState(() {
                   _selectedFilteredDialogCountry = country;
-                  _countryCode = country.phoneCode;
+                  countryCode = country.phoneCode;
                 });
               },
               itemBuilder: _buildDialogItem,
