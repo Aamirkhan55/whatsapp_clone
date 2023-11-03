@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/feature/app/calls/call_historyPpage.dart';
 import 'package:whatsapp_clone/feature/app/chat/chat_page.dart';
 import 'package:whatsapp_clone/feature/app/const/page_const.dart';
-import 'package:whatsapp_clone/feature/app/status/statuse_page.dart';
+import 'package:whatsapp_clone/feature/app/status/status_page.dart';
 import 'package:whatsapp_clone/feature/app/theme/style.dart';
 
 
