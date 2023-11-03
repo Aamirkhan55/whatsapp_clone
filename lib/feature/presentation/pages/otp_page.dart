@@ -100,10 +100,8 @@ class _OtpPageState extends State<OtpPage> {
         children: <Widget>[
           PinCodeFields(
             controller: _otpController,
-
             length: 6,
             activeBorderColor: tabColor,
-
             onComplete: (String pinCode) {},
           ),
           const Text("Enter your 6 digit code")
