@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/feature/app/global/date/date_format.dart';
 import 'package:whatsapp_clone/feature/app/global/widgets/profile_widget.dart';
 import 'package:whatsapp_clone/feature/app/theme/style.dart';
 
@@ -83,6 +84,34 @@ class StatusPage extends StatelessWidget {
               ),
               ),
           ),
+          const SizedBox(height: 10),
+          ListView.builder(
+            itemCount: 10,
+            shrinkWrap: true,
+            physics: const ScrollPhysics(),
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: Container(
+                  width: 55,
+                  height: 55,
+                  margin: const EdgeInsets.all(3),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: profileWidget(),
+                  ),
+                ),
+                title: const Text(
+                  "UserName",
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                  ),
+                subtitle: Text(
+                  formatDateTime(DateTime.now())
+                ),  
+              );
+            }
+            )
         ],
       ),
      ),
