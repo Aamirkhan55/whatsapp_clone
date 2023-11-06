@@ -7,9 +7,23 @@ class CallHistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: backgroundColor,
-      body: Center(
-        child: Text("CallHistoryPage"),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+             SizedBox(height: 15),
+             Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Text(
+                "Recent Calls",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: greyColor,
+                  fontWeight: FontWeight.w600
+                ),
+                ) ,
+              )
+          ],
+        ),
       ),
     );
   }
