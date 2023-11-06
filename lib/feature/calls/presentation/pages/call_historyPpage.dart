@@ -11,6 +11,7 @@ class CallHistoryPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
              const SizedBox(height: 15),
              const Padding(
@@ -58,9 +59,13 @@ class CallHistoryPage extends StatelessWidget {
                       const  SizedBox(width: 10),
                       Text(
                         formatDateTime(DateTime.now())
-                      )  
+                      ),  
                     ],
                   ),  
+                  trailing: const Icon(
+                    Icons.call,
+                    color: tabColor,
+                  ),
                 );
               } )
           ],
