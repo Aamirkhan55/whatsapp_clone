@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/feature/app/home/contact_page.dart';
 import 'package:whatsapp_clone/feature/calls/presentation/pages/call_historyPpage.dart';
 import 'package:whatsapp_clone/feature/chat/presentation/pages/chat_page.dart';
 import 'package:whatsapp_clone/feature/app/const/page_const.dart';
@@ -138,8 +139,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           return FloatingActionButton(
             backgroundColor: tabColor,
             onPressed: () {
-             // Navigator.push(context, MaterialPageRoute(builder: (context) => const ContactsPage()));
-              Navigator.pushNamed(context, PageConst.contactUserPage);
+             Navigator.push(context, MaterialPageRoute(builder: (context) => const ContactsPage()));
+              // Navigator.pushNamed(context, PageConst.contactUserPage);
             },
             child: const Icon(
               Icons.message,
