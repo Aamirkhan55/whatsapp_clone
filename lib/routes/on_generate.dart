@@ -11,7 +11,6 @@ class OnGenerateRoute {
 
 
   static Route<dynamic>? route(RouteSettings settings) {
-    final args = settings.arguments;
     final name = settings.name;
 
     switch (name) {
@@ -20,7 +19,7 @@ class OnGenerateRoute {
           return materialPageBuilder(const ContactsPage());
         }
       case PageConst.settingPage: {
-        return materialPageBuilder(const SettingPage());
+        return materialPageBuilder(const SettingsPage());
       }
       case PageConst.callContactPage: {
         return materialPageBuilder(const CallContactsPage());

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/feature/app/home/contact_page.dart';
 import 'package:whatsapp_clone/feature/calls/presentation/pages/call_historyPpage.dart';
 import 'package:whatsapp_clone/feature/chat/presentation/pages/chat_page.dart';
 import 'package:whatsapp_clone/feature/app/const/page_const.dart';
