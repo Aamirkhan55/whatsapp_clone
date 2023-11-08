@@ -19,9 +19,9 @@ class _SingleChatPageState extends State<SingleChatPage> {
 
   bool _isDisplaySendButton = false;
   
-  get bottomAttachContainerColor => null;
+  get bottomAttachContainerColor => backgroundColor;
   
-  get senderMessageColor => null;
+  get senderMessageColor => tabColor;
   @override
   void dispose() {
     _textMessageController.dispose();
@@ -36,6 +36,7 @@ class _SingleChatPageState extends State<SingleChatPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Username'),
             Text(
@@ -87,147 +88,150 @@ class _SingleChatPageState extends State<SingleChatPage> {
                   fit: BoxFit.cover),
             ),
 
-            Column(
-              children: [
-                Expanded(
-                  child: ListView(
-                    children: [
-                      _messageLayout(
-                        message: "Hello",
-                        alignment: Alignment.centerRight,
-                        createAt: Timestamp.now(),
-                        isSeen: false,
-                        isShowTick: true,
-                        messageBgColor: messageColor,
-                        onLongPress: () {},
-                        onSwipe: () {},
-                      ),
-                      _messageLayout(
-                        message: "How are you?",
-                        alignment: Alignment.centerRight,
-                        createAt: Timestamp.now(),
-                        isSeen: false,
-                        isShowTick: true,
-                        messageBgColor: messageColor,
-                        onLongPress: () {},
-                        onSwipe: () {},
-                      ),
-                      _messageLayout(
-                        message: "Hi",
-                        alignment: Alignment.centerLeft,
-                        createAt: Timestamp.now(),
-                        isSeen: false,
-                        isShowTick: false,
-                        messageBgColor: senderMessageColor,
-                        onLongPress: () {},
-                        onSwipe: () {},
-                      ),
-                      _messageLayout(
-                        message: "Doing good, how about you?",
-                        alignment: Alignment.centerLeft,
-                        createAt: Timestamp.now(),
-                        isSeen: false,
-                        isShowTick: false,
-                        messageBgColor: senderMessageColor,
-                        onLongPress: () {},
-                        onSwipe: () {},
-                      ),
-
-                    ],
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView(
+                      children: [
+                        _messageLayout(
+                          message: "Hello",
+                          alignment: Alignment.centerRight,
+                          createAt: Timestamp.now(),
+                          isSeen: false,
+                          isShowTick: true,
+                          messageBgColor: messageColor,
+                          onLongPress: () {},
+                          onSwipe: () {},
+                        ),
+                        _messageLayout(
+                          message: "How are you?",
+                          alignment: Alignment.centerRight,
+                          createAt: Timestamp.now(),
+                          isSeen: false,
+                          isShowTick: true,
+                          messageBgColor: messageColor,
+                          onLongPress: () {},
+                          onSwipe: () {},
+                        ),
+                        _messageLayout(
+                          message: "Hi",
+                          alignment: Alignment.centerLeft,
+                          createAt: Timestamp.now(),
+                          isSeen: false,
+                          isShowTick: false,
+                          messageBgColor: senderMessageColor,
+                          onLongPress: () {},
+                          onSwipe: () {},
+                        ),
+                        _messageLayout(
+                          message: "Doing good, how about you?",
+                          alignment: Alignment.centerLeft,
+                          createAt: Timestamp.now(),
+                          isSeen: false,
+                          isShowTick: false,
+                          messageBgColor: senderMessageColor,
+                          onLongPress: () {},
+                          onSwipe: () {},
+                        ),
+            
+                      ],
+                    ),
                   ),
-                ),
-
-                Container(
-                  margin: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 5),
-                          decoration: BoxDecoration(
-                              color: appBarColor,
-                              borderRadius: BorderRadius.circular(25)),
-                          height: 50,
-                          child: TextField(
-                            onTap: () {
-                              setState(() {
-                                _isShowAttachWindow = false;
-                              });
-                            },
-                            controller: _textMessageController,
-                            onChanged: (value) {
-                              if (value.isNotEmpty) {
+            
+                  Container(
+                    margin: const EdgeInsets.only(left: 5, right: 5, top: 5, bottom: 5),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            decoration: BoxDecoration(
+                                color: appBarColor,
+                                borderRadius: BorderRadius.circular(25)),
+                            height: 50,
+                            child: TextField(
+                              onTap: () {
                                 setState(() {
-                                  _isDisplaySendButton = true;
+                                  _isShowAttachWindow = false;
                                 });
-                              } else {
-                                setState(() {
-                                  _isDisplaySendButton = false;
-                                });
-                              }
-                            },
-                            decoration: InputDecoration(
-                              contentPadding: const EdgeInsets.symmetric(vertical: 15),
-                              prefixIcon: const Icon(Icons.emoji_emotions, color: greyColor,),
-                              suffixIcon: Padding(
-                                padding: const EdgeInsets.only(top: 12.0),
-                                child: Wrap(
-                                  children: [
-                                    Transform.rotate(
-                                      angle: -0.5,
-                                      child: GestureDetector(
-                                        onTap: () {
-                                          setState(() {
-                                            _isShowAttachWindow = !_isShowAttachWindow;
-                                          });
-                                        },
-                                        child: const Icon(
-                                          Icons.attach_file,
-                                          color: greyColor,
+                              },
+                              controller: _textMessageController,
+                              onChanged: (value) {
+                                if (value.isNotEmpty) {
+                                  setState(() {
+                                    _isDisplaySendButton = true;
+                                  });
+                                } else {
+                                  setState(() {
+                                    _isDisplaySendButton = false;
+                                  });
+                                }
+                              },
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(vertical: 15),
+                                prefixIcon: const Icon(Icons.emoji_emotions, color: greyColor,),
+                                suffixIcon: Padding(
+                                  padding: const EdgeInsets.only(top: 12.0),
+                                  child: Wrap(
+                                    children: [
+                                      Transform.rotate(
+                                        angle: -0.5,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _isShowAttachWindow = !_isShowAttachWindow;
+                                            });
+                                          },
+                                          child: const Icon(
+                                            Icons.attach_file,
+                                            color: greyColor,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    const SizedBox(
-                                      width: 15,
-                                    ),
-                                    const Icon(
-                                      Icons.camera_alt,
-                                      color: greyColor,
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                  ],
+                                      const SizedBox(
+                                        width: 15,
+                                      ),
+                                      const Icon(
+                                        Icons.camera_alt,
+                                        color: greyColor,
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                    ],
+                                  ),
                                 ),
+                                hintText: 'Message',
+                                border: InputBorder.none,
+            
                               ),
-                              hintText: 'Message',
-                              border: InputBorder.none,
-
                             ),
                           ),
                         ),
-                      ),
-
-                      const SizedBox(width: 10.0),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: tabColor),
-                        child: Center(
-                          child: Icon(
-                            _isDisplaySendButton
-                                ? Icons.send_outlined
-                                : Icons.mic,
-                            color: Colors.white,
+            
+                        const SizedBox(width: 10.0),
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: tabColor),
+                          child: Center(
+                            child: Icon(
+                              _isDisplaySendButton
+                                  ? Icons.send_outlined
+                                  : Icons.mic,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
 
             _isShowAttachWindow == true?Positioned(
