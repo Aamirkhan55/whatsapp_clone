@@ -38,7 +38,12 @@ class _SingleChatPageState extends State<SingleChatPage> {
         title: const Column(
           children: [
             Text('Username'),
-            Text('Online', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400),),
+            Text(
+              'Online', 
+              style: TextStyle(
+                fontSize: 11, 
+                fontWeight: FontWeight.w400,
+                ),),
           ],
         ),
         actions: const [

@@ -9,7 +9,6 @@ import 'package:whatsapp_clone/feature/status/presentation/pages/my_status.dart'
 
 class OnGenerateRoute {
 
-
   static Route<dynamic>? route(RouteSettings settings) {
     final name = settings.name;
 
